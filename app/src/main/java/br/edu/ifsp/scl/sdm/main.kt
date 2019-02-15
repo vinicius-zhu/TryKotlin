@@ -3,7 +3,7 @@ package br.edu.ifsp.scl.sdm
 // args: Array<String> deixou de ser obrigatório na versão 1.3
 fun main() {
     // Declaração de variável MUTÁVEL
-    var frase: String = "Hello, World!"
+    val frase: String
 
     frase = "Hello, IFSP"
     // Imprime a variável na tela
