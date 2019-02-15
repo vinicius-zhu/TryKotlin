@@ -5,6 +5,7 @@ fun main() {
     // Declaração de variável MUTÁVEL
     var frase: String = "Hello, World!"
 
+    frase = "Hello, IFSP"
     // Imprime a variável na tela
     println(frase)
 
