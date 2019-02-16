@@ -11,10 +11,16 @@ fun main() {
         println(integrante)
     }
 
-    val listaInteiros: List<Int> = listOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val listaInteiros: List<Int> = (1..10).toList()
     // Percorrer usando FOR usando IntRange
     for (i in 0..9) {
         println(listaInteiros[i])
+    }
+
+    val listaInteiros2: List<Int> = (1..10 step 2).toList()
+    // Percorrer usando FOR usando IntRange
+    for (i in 0..listaInteiros2.size - 1) {
+        println(listaInteiros2[i])
     }
 
     // listaInteiros.add(11)
