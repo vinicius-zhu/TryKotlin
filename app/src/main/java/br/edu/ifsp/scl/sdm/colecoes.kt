@@ -24,4 +24,49 @@ fun main() {
     }
 
     // listaInteiros.add(11)
+
+    // Lista mutável
+    val listaCursos: MutableList<String> = mutableListOf<String>("Sistemas para Dispositivos Móveis", "Análise e Desenvolvimento de Sistemas")
+
+    // Adicionando elemento à lista
+    listaCursos.add("Técnico em Informática para Internet")
+
+    // Percorrendo a lista com LAMBDA
+    //listaCursos.forEach {println(it)}
+
+    listaCursos.add("Manutenção de Aeronaves")
+    listaCursos.add("Técnico em Células")
+    listaCursos.add("Processos Gerenciais")
+
+
+    // Solução 1
+/*    val listaCursosSistemas = mutableListOf<String>()
+    for (curso in listaCursos) {
+        if (curso.contains("Sistemas")){
+            listaCursosSistemas.add(curso)
+        }
+    }
+
+    for (i in 0..listaCursosSistemas.size - 1) {
+        println("$i - ${listaCursosSistemas[i]}")
+    }*/
+
+    // Solução 2
+/*
+    val listaCursosSistemas = listaCursos.filter{ it.contains("Sistemas") }
+    listaCursosSistemas.withIndex().forEach { println("${it.index} - ${it.value}")}
+*/
+
+    // Solução 3
+    var funcao = fun (ci: IndexedValue<String>) {
+        println("${ci.index} - ${ci.value}")
+    }
+
+    var g: (IndexedValue<String>) -> Unit
+    g = funcao
+
+    val listaCursosSistemas = listaCursos.filter{ it.contains("Sistemas") }
+    listaCursosSistemas.withIndex().forEach(g)
+
+
 }
