@@ -1,4 +1,5 @@
-package br.edu.ifsp.scl.sdm
+package br.edu.ifsp.scl.sdm.trykotlin
+
 
 fun main() {
     // List e MutableList
@@ -68,5 +69,44 @@ fun main() {
     val listaCursosSistemas = listaCursos.filter{ it.contains("Sistemas") }
     listaCursosSistemas.withIndex().forEach(g)
 
+    println("Set e MutableSet")
+    val setCursos: MutableSet<String> = mutableSetOf<String>("ADS","SDM","TII")
+    setCursos.add("ADS")
+    setCursos.add("SDM")
+    setCursos.add("TMA")
 
+    setCursos.forEach {println(it)}
+
+    println("Map e MutableMap")
+    //val familiaMap: MutableMap<String,String>=mutableMapOf()
+
+    var familiaMap: MutableMap<String, String> = mutableMapOf(Pair("Pai","Pedro"),Pair("Mãe","Marcela"),Pair("Filho","João"),Pair("Caçula","Cadu"),Pair("Pet","Paçoca"))
+
+    // Solução 1
+    for (chave in familiaMap.keys) {
+        println("${chave}: ${familiaMap.get(chave)}")
+    }
+
+    // Solução 2
+    familiaMap.keys.forEach{println("${it}: ${familiaMap.get(it)}")}
+
+    // Solução 3
+    fun percorreMap(par: Map.Entry<String, String>): Unit{
+        println("${par.key}: ${par.value}")
+    }
+    familiaMap.forEach(::percorreMap)
+
+    // Solução 4
+    val percorreMap:(String,String) -> Unit = fun(k:String,v:String){
+        println("$k: $v")
+    }
+    familiaMap.forEach(percorreMap)
+
+    // Solução 4.1
+    //val percorreMap: (String, String) -> Unit = {k, v -> println("$k: $v")}
+
+    familiaMap.forEach(percorreMap)
+
+    // Solução 5
+    familiaMap.forEach {t,u->println("$t: $u")}
 }

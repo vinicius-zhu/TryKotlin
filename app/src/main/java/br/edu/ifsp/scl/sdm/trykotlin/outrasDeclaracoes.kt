@@ -1,4 +1,4 @@
-package br.edu.ifsp.scl.sdm
+package br.edu.ifsp.scl.sdm.trykotlin
 
 fun main() {
     // String com tipo explícito
