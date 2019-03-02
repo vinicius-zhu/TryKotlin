@@ -1,13 +1,14 @@
 package br.edu.ifsp.scl.sdm.trykotlin
 
-fun processaInteiro(i: Int, f:(j: Int) ->Int): Int{
+inline fun processaInteiro(i: Int, f:(j: Int) ->Int): Int{
     return f(i)
 }
-fun inverte(x: Int): Int = x*-1
+inline fun inverte(x: Int): Int = x*-1
 
-infix fun Int.executa(f:(Int) ->Int):Int{
+inline infix fun Int.executa(f:(Int) ->Int):Int{
     return f(this)
 }
+
 fun main() {
     // Passando uma função comum como parâmetro
     val n: Int = processaInteiro (10, ::inverte)
